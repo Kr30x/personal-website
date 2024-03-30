@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 
 	description:
 		"Based in Moscow, I'm a full-stack developer passionate about creating beautiful, performant, and user-friendly products.",
-	// openGraph: {
-	// 	title: "Gleb Golubev",
-	// 	description:
-	// 		"Based in Moscow, I'm a full-stack developer passionate about creating beautiful, performant, and user-friendly products.",
-	// 	url: "https://gleb-golubev.vercel.app/",
-	// 	siteName: "Gleb Golubev",
-	// 	images: "/linkimage.png",
-	// 	type: "website",
-	// },
+	openGraph: {
+		title: "Gleb Golubev",
+		description:
+			"Based in Moscow, I'm a full-stack developer passionate about creating beautiful, performant, and user-friendly products.",
+		url: "https://gleb-golubev.vercel.app/",
+		siteName: "Gleb Golubev",
+		images: "/linkimage.png",
+		type: "website",
+	},
 	keywords: ["Gleb Golubev", "software developer", "fullstack"],
 };
 
