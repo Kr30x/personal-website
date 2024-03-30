@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://gleb-golubev.vercel.app/"),
 
 	title: {
-		template: "gleb golubev",
+		template: "Gleb Golubev",
 		default: "Gleb Golubev",
 	},
 	authors: {
-		name: "gleb golubev",
+		name: "Gleb Golubev",
 	},
 
 	description:
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 		description:
 			"Based in Moscow, I'm a full-stack developer passionate about creating beautiful, performant, and user-friendly products.",
 		url: "https://gleb-golubev.vercel.app/",
-		siteName: "gleb golubev",
-		images: "/og.png",
+		siteName: "Gleb Golubev",
+		images: "/linkimage.png",
 		type: "website",
 	},
 	keywords: ["Gleb Golubev", "software developer", "fullstack"],
