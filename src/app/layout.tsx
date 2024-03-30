@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 	},
 
 	description:
-		"Based in Moscow, I'm a full-stack developer passionate about creating beautiful, performant, and user-friendly products.",
+		"I'm a full-stack developer from Moscow. I'm passionate about creating beautiful, performant, and user-friendly products.",
 	openGraph: {
 		title: "Gleb Golubev",
 		description:
