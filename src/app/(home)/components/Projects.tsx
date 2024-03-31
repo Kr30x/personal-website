@@ -40,7 +40,7 @@ export default function Projects(){
             tech: [SiPython, SiSelenium],
             link: "https://github.com/Kr30x/yacontest_scraper",
             cover: "/project5.png",
-            background: "",
+            background: "bg-white",
         },
     ]
 
