@@ -1,5 +1,5 @@
 import React from "react";
-import { SiCmake, SiCplusplus, SiFlask, SiPython, SiSelenium } from "react-icons/si";
+import { SiCmake, SiCplusplus, SiFlask, SiPython, SiSelenium, SiObsidian, SiMarkdown } from "react-icons/si";
 import Title from "./Title";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -40,6 +40,13 @@ export default function Projects(){
             tech: [SiPython, SiSelenium],
             link: "https://github.com/Kr30x/yacontest_scraper",
             cover: "/project5.png",
+            background: "bg-white",
+        },
+        {
+            title: "Obsidian blog editor", 
+            tech: [SiObsidian, SiPython, SiMarkdown],
+            link: "https://github.com/Kr30x/yacontest_scraper",
+            cover: "/project6.png",
             background: "bg-white",
         },
     ]
