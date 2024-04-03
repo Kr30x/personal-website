@@ -45,7 +45,7 @@ export default function Projects(){
         {
             title: "Obsidian blog editor", 
             tech: [SiObsidian, SiPython, SiMarkdown],
-            link: "https://github.com/Kr30x/yacontest_scraper",
+            link: "http://amihelper.run.place/notes",
             cover: "/project6.png",
             background: "bg-white",
         },
