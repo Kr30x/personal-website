@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+const font = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://gleb-golubev.vercel.app/"),
@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${spaceGrotesk.className}`}>
+      <body className={`${font.className}`}>
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"

@@ -8,16 +8,16 @@ import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 export default function Projects(){
     const projects = [
         {
-            title: "Custom image processor", 
+            title: "Консольное приложение для работы с изображениями", 
             tech: [SiCplusplus, SiCmake],
             link: "https://github.com/Kr30x/image_processor",
             cover: "/project1.png",
             background: "",
         },
         {
-            title: "Testing system", 
+            title: "Тестовая система для студентов ФКН ВШЭ", 
             tech: [SiPython, SiFlask],
-            link: "http://amihelper.run.place",
+            link: "http://algotester.run.place/home",
             cover: "/project2.png",
             background: "",
         },
@@ -36,14 +36,14 @@ export default function Projects(){
         //     background: "",
         // },
         {
-            title: "Yandex contest parser", 
+            title: "Парсер Яндекс контестов в Google Sheets", 
             tech: [SiPython, SiSelenium],
             link: "https://github.com/Kr30x/yacontest_scraper",
             cover: "/project5.png",
             background: "bg-white",
         },
         {
-            title: "Obsidian blog editor", 
+            title: "Редактор Markdown блога на сайте в Obsidian", 
             tech: [SiObsidian, SiPython, SiMarkdown],
             link: "http://amihelper.run.place/notes",
             cover: "/project6.png",
@@ -52,7 +52,7 @@ export default function Projects(){
     ]
 
     return <div className="py-10 p-5 sm:p-0">
-        <Title text="Projects 🚀" className="flex flex-col items-center justify-center rotate-6"/>
+        <Title text="Проекты 🚀" className="flex flex-col items-center justify-center rotate-6"/>
         <div className="grid grid-cols-1 sm:grid-cols-2 pt-20 gap-5">
             {projects.map((project, index) => {
                 return (
@@ -63,7 +63,7 @@ export default function Projects(){
                                     <h1 className="text-2xl font-bold">{project.title}</h1>
                                     <div className="flex items-center gap-5">
                                         {project.tech.map((tech, index) => {
-                                            const Icon = tech
+                                             const Icon = tech
                                             return <Icon key={index} className="w-8 h-8"/>
                                         })}
                                     </div>
