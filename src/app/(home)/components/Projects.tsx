@@ -1,5 +1,5 @@
 import React from "react";
-import { SiCmake, SiCplusplus, SiFlask, SiPython, SiSelenium, SiObsidian, SiMarkdown } from "react-icons/si";
+import { SiCmake, SiCplusplus, SiFlask, SiPython, SiSelenium, SiObsidian, SiMarkdown, SiTypescript, SiReact, SiTailwindcss } from "react-icons/si";
 import Title from "./Title";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -49,6 +49,13 @@ export default function Projects(){
             cover: "/project6.png",
             background: "bg-white",
         },
+        {
+            title: "Генератор pdf документов для туристической компании",
+            tech: [SiTypescript, SiReact, SiTailwindcss],
+            link: "https://github.com/Kr30x/pdfgen",
+            cover: "/project7.png",
+            background: "bg-white",
+        }
     ]
 
     return <div className="py-10 p-5 sm:p-0">
