@@ -86,14 +86,14 @@ export default function HeroSection() {
         </div>
 
         {/* Status badge */}
-        <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 lg:bottom-5 lg:left-0 lg:transform-none">
+        <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 lg:bottom-5 lg:left-0 lg:transform-none">
           <MovingBorderBtn
             borderRadius="0.75rem"
-            className="px-6 py-3 font-semibold text-sm"
+            className="px-4 py-2 sm:px-6 sm:py-3 font-semibold text-xs sm:text-sm"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span>Яндекс Backend Dev</span>
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse flex-shrink-0"></div>
+              <span className="whitespace-nowrap">Яндекс Backend Dev</span>
             </div>
           </MovingBorderBtn>
         </div>

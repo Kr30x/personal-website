@@ -9,7 +9,7 @@ export default function Experience() {
       title: "Backend Разработчик",
       company: "Яндекс",
       location: "Москва",
-      period: "Янв 2025 - Настоящее время",
+      period: "Янв 2025 - Сейчас",
       description:
         "Разрабатываю инфраструктуру для веб-поиска Яндекса. Управляю системами кэширования критически важных данных и создаю инструменты для трансформации в ML-датасеты. Постоянно ищу точки оптимизации в процессах работы с тысячами асессоров.",
       current: true,
@@ -53,10 +53,10 @@ export default function Experience() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-8 py-20">
+    <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-20">
       <Title
         text="Опыт работы 💼"
-        className="flex flex-col items-center justify-center rotate-3 mb-16"
+        className="flex flex-col items-center justify-center rotate-3 mb-8 sm:mb-16"
       />
 
       <motion.div
@@ -66,17 +66,17 @@ export default function Experience() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        {/* Vertical line */}
-        <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 via-green-400 to-transparent"></div>
+        {/* Vertical line - shows career progression */}
+        <div className="absolute -left-2 sm:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 via-green-400 to-transparent"></div>
 
         {experiences.map((experience, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
-            className="relative flex items-start mb-12 last:mb-0"
+            className="relative flex items-start mb-6 sm:mb-12 last:mb-0"
           >
-            {/* Bullet point */}
-            <div className="relative z-10 flex-shrink-0">
+            {/* Bullet point - hidden on mobile */}
+            <div className="hidden sm:block relative z-10 flex-shrink-0">
               <div
                 className={`w-4 h-4 rounded-full border-4 ${
                   experience.current
@@ -91,19 +91,26 @@ export default function Experience() {
             </div>
 
             {/* Content */}
-            <div className="ml-8 flex-1">
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg p-6 hover:border-green-500/50 transition-all duration-300 group">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+            <div className="ml-2 sm:ml-8 flex-1">
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-green-500/50 transition-all duration-300 group">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-3">
                   <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-green-400 transition-colors">
                       {experience.title}
                     </h3>
-                    <p className="text-green-400 font-medium">
-                      {experience.company} • {experience.location}
-                    </p>
+                    <div className="flex items-center gap-2 text-green-400 font-medium text-sm sm:text-base">
+                      <img
+                        src="/yandex_logo.png"
+                        alt="Yandex"
+                        className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                      />
+                      <span>
+                        {experience.company} • {experience.location}
+                      </span>
+                    </div>
                   </div>
                   <div className="flex items-center gap-2 mt-2 sm:mt-0">
-                    <span className="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
+                    <span className="text-xs sm:text-sm text-gray-400 bg-gray-800 px-2 py-1 sm:px-3 rounded-full">
                       {experience.period}
                     </span>
                     {experience.current && (
@@ -113,7 +120,7 @@ export default function Experience() {
                     )}
                   </div>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                   {experience.description}
                 </p>
               </div>
