@@ -8,6 +8,7 @@ const PHRASES = [
   "жду, пока доработает Claude Code...",
   "поднимаю упавшие процессы...",
   "выплачиваю премии редакторам...",
+  "готовлюсь к встречам..."
 ];
 
 const TEXT_CLASS = "text-xs sm:text-sm whitespace-nowrap leading-6";
