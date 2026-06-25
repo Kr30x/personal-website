@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import FaviconCube from "@/components/FaviconCube";
 
 const font = Montserrat({ subsets: ["latin"] });
 
@@ -9,8 +10,8 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://gleb-golubev.vercel.app/"),
 
 	title: {
-		template: "Gleb Golubev",
-		default: "Gleb Golubev",
+		template: "Глеб Голубев",
+		default: "Глеб Голубев",
 	},
 	authors: {
 		name: "Gleb Golubev",
@@ -36,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <body className={`${font.className}`}>
         <ThemeProvider
             attribute="class"
@@ -44,6 +45,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <FaviconCube />
             {children}
         </ThemeProvider></body>
     </html>

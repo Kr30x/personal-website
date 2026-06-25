@@ -1,18 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import Title from "./Title";
 
 export default function Experience() {
   const experiences = [
     {
+      title: "Руководитель бригады",
+      company: "Яндекс",
+      location: "Москва",
+      period: "Июнь 2026 — Сейчас",
+      description:
+        "Моя команда строит инфраструктуру для разметки данных. Работаем с двумя типами исполнителей: штатными редакторами на поисковых проектах и экспертами на сделке. Автоматизируем найм, выплаты, контроль качества и мониторинг активности, строим универсальные инструменты для аналитики.",
+      link: {
+        url: "https://ai-trainers.ya.ru/",
+        label: "ai-trainers.ya.ru",
+      },
+      current: true,
+    },
+    {
       title: "Backend Разработчик",
       company: "Яндекс",
       location: "Москва",
-      period: "Янв 2025 - Сейчас",
+      period: "Янв 2025 — Июнь 2026",
       description:
-        "Разрабатываю парсеры и инструменты генерации датасетов для веб-поиска Яндекса. Управляю хранилищами оценок поисковых разметок и аналитикой по ним. Строю инфраструктуру рейтинга разметчиков данных.",
-      current: true,
+        "Разрабатывал парсеры и инструменты генерации датасетов для веб-поиска Яндекса. Управлял хранилищами оценок поисковых разметок и аналитикой по ним. Строил инфраструктуру рейтинга разметчиков данных.",
+      current: false,
     },
     {
       title: "Стажер Backend Разработчик",
@@ -25,109 +40,102 @@ export default function Experience() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
+  const cardVariants = {
     hidden: {
       opacity: 0,
-      x: -50,
-      scale: 0.8,
+      y: 16,
     },
-    visible: {
+    visible: (index: number) => ({
       opacity: 1,
-      x: 0,
-      scale: 1,
+      y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.45,
         ease: "easeOut",
+        delay: index * 0.15,
       },
-    },
+    }),
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-20">
-      <Title
-        text="Опыт работы 💼"
-        className="flex flex-col items-center justify-center rotate-3 mb-8 sm:mb-16"
-      />
+    <div className="max-w-5xl mx-auto">
+      <Title text="Опыт работы" className="mb-12 sm:mb-16" index="01" />
 
-      <motion.div
-        className="relative"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {/* Vertical line - shows career progression */}
-        <div className="absolute -left-2 sm:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 via-green-400 to-transparent"></div>
-
+      <div className="space-y-0 border-2 border-neutral-800">
         {experiences.map((experience, index) => (
-          <motion.div
+          <div
             key={index}
-            variants={itemVariants}
-            className="relative flex items-start mb-6 sm:mb-12 last:mb-0"
+            className="relative grid sm:grid-cols-[4rem_1fr] border-b border-neutral-800 last:border-b-0"
           >
-            {/* Bullet point - hidden on mobile */}
-            <div className="hidden sm:block relative z-10 flex-shrink-0">
+            <div className="hidden sm:flex flex-col items-center border-r border-neutral-800 py-8">
               <div
-                className={`w-4 h-4 rounded-full border-4 ${
+                className={`w-3 h-3 border-2 ${
                   experience.current
-                    ? "bg-green-500 border-green-400 shadow-lg shadow-green-500/50"
-                    : "bg-gray-700 border-gray-600"
+                    ? "bg-green-500 border-green-500"
+                    : "bg-neutral-900 border-neutral-600"
                 }`}
-              >
-                {experience.current && (
-                  <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75"></div>
-                )}
-              </div>
+              />
+              {index < experiences.length - 1 && (
+                <div className="w-px flex-1 bg-neutral-800 mt-3" />
+              )}
             </div>
 
-            {/* Content */}
-            <div className="ml-2 sm:ml-8 flex-1">
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-green-500/50 transition-all duration-300 group">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-3">
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-green-400 transition-colors">
-                      {experience.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-green-400 font-medium text-sm sm:text-base">
-                      <img
-                        src="/yandex_logo.png"
-                        alt="Yandex"
-                        className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
-                      />
-                      <span>
-                        {experience.company} • {experience.location}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 mt-2 sm:mt-0">
-                    <span className="text-xs sm:text-sm text-gray-400 bg-gray-800 px-2 py-1 sm:px-3 rounded-full">
-                      {experience.period}
+            <motion.div
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className={`p-5 sm:p-8 bg-neutral-950 hover:bg-neutral-900/50 transition-colors duration-150 ${
+                experience.current ? "border-l-4 border-l-green-500 sm:border-l-0" : ""
+              }`}
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8 mb-5">
+                <div className="min-w-0 flex-1 space-y-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-white leading-snug">
+                    {experience.title}
+                  </h3>
+                  <div className="flex items-center gap-2 text-neutral-500 text-sm font-mono uppercase tracking-wide">
+                    <Image
+                      src="/yandex_logo.png"
+                      alt="Yandex"
+                      width={16}
+                      height={16}
+                      className="object-contain shrink-0"
+                    />
+                    <span>
+                      {experience.company} · {experience.location}
                     </span>
-                    {experience.current && (
-                      <span className="text-xs text-green-400 bg-green-500/20 px-2 py-1 rounded-full border border-green-500/30">
-                        Текущая
-                      </span>
-                    )}
                   </div>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                  {experience.description}
-                </p>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <span className="font-mono text-[11px] text-neutral-400 border border-neutral-700 px-2.5 py-1 uppercase tracking-wide whitespace-nowrap">
+                    {experience.period}
+                  </span>
+                  {experience.current && (
+                    <span className="font-mono text-[11px] text-green-500 border-2 border-green-500/40 bg-green-500/5 px-2.5 py-1 uppercase tracking-wide whitespace-nowrap">
+                      Текущая
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-          </motion.div>
+              <div className="text-neutral-400 leading-relaxed text-sm sm:text-base">
+                {experience.description}
+              </div>
+              {"link" in experience && experience.link && (
+                <Link
+                  href={experience.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-5 font-mono text-xs uppercase tracking-wider text-green-500 hover:text-green-400 border-b border-green-500/40 hover:border-green-400 transition-colors pb-0.5"
+                >
+                  {experience.link.label}
+                  <span aria-hidden="true">↗</span>
+                </Link>
+              )}
+            </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
