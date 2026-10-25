@@ -3,6 +3,7 @@
 import { Press_Start_2P } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import avatar from "../../../../public/avatar.jpg";
 import StatusTypewriter from "./StatusTypewriter";
 
 const gamingFont = Press_Start_2P({
@@ -18,10 +19,10 @@ export default function HeroSection() {
           <div className="absolute inset-0 translate-x-3 translate-y-3 border-2 border-green-500/30 pointer-events-none" />
           <div className="relative aspect-square border-2 border-neutral-700 bg-neutral-900 overflow-hidden">
             <Image
-              src="/avatar.jpg"
+              src={avatar}
               alt="Глеб Голубев"
               fill
-              className="object-cover object-[center_20%] scale-110 grayscale-[15%] contrast-110"
+              className="object-cover object-[center_65%] scale-110 grayscale-[15%] contrast-110"
               priority
             />
           </div>
