@@ -7,7 +7,7 @@ import FaviconCube from "@/components/FaviconCube";
 const font = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://gleb-golubev.vercel.app/"),
+	metadataBase: new URL("https://golubevgleb.ru/"),
 
 	title: {
 		template: "Глеб Голубев",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 		title: "Gleb Golubev",
 		description:
 			"I'm a full-stack developer from Moscow. I'm passionate about creating beautiful, performant, and user-friendly products.",
-		url: "https://gleb-golubev.vercel.app/",
+		url: "https://golubevgleb.ru/",
 		siteName: "Gleb Golubev",
 		images: "/og.png",
 		type: "website",
